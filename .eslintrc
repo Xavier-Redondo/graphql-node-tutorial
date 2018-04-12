@@ -1,0 +1,19 @@
+{
+  "env": {
+    "browser": false,
+    "es6": true,
+    "node": true
+  },
+  "plugins": ["import"],
+  "rules": {
+    "comma-dangle": "off",
+    "import/no-dynamic-require": 0,
+    "global-require": 0,
+    "no-param-reassign": 0,
+    "consistent-return": 0,
+    "no-plusplus": 0,
+    "no-underscore-dangle": 0,
+    "object-shorthand": 0
+  },
+  "extends": ["airbnb-base", "prettier"]
+}

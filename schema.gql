@@ -1,14 +1,10 @@
 type Query {
   info: String!
-  users: [User!]!
-  user(id: ID!): User
+  feed: [Link!]!
 }
 
-type Mutation {
-  createUser(name: String!): User!
-}
-
-type User {
+type Link {
   id: ID!
-  name: String!
+  description: String!
+  url: String!
 }

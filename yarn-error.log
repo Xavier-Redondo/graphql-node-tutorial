@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/xavierr/.nvm/versions/node/v8.9.4/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js start
+  /Users/xavierr/.nvm/versions/node/v8.9.4/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js add prettier, eslint --dev
 
 PATH: 
   /Users/xavierr/dev/apps/mongodb-osx-x86_64-3.6.0/bin:/Users/xavierr/dev/apps/open-client:/Users/xavierr/.nvm/versions/node/v8.9.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Wireshark.app/Contents/MacOS:/Users/xavierr/dev/apps/mongodb-osx-x86_64-3.6.0/bin:/Users/xavierr/dev/apps/open-client
@@ -15,7 +15,8 @@ Platform:
 
 npm manifest: 
   {
-    "name": "hackernews-node",
+    "name": "graphql-node-tutorial",
+    "description": "a tutorial of graphql based on https://www.howtographql.com/graphql-js",
     "version": "1.0.0",
     "main": "index.js",
     "license": "MIT",
@@ -24,6 +25,9 @@ npm manifest:
     },
     "dependencies": {
       "graphql-yoga": "^1.8.5"
+    },
+    "devDependencies": {
+      "prettier": "^1.12.0"
     }
   }
 
@@ -661,6 +665,10 @@ Lockfile:
     version "0.1.7"
     resolved "http://axags.artifactoryonline.com/axags/api/npm/virtual-bcn-node/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
   
+  prettier@^1.12.0:
+    version "1.12.0"
+    resolved "http://axags.artifactoryonline.com/axags/api/npm/virtual-bcn-node/prettier/-/prettier-1.12.0.tgz#d26fc5894b9230de97629b39cae225b503724ce8"
+  
   proxy-addr@~2.0.3:
     version "2.0.3"
     resolved "http://axags.artifactoryonline.com/axags/api/npm/virtual-bcn-node/proxy-addr/-/proxy-addr-2.0.3.tgz#355f262505a621646b3130a728eb647e22055341"
@@ -874,17 +882,14 @@ Lockfile:
     resolved "http://axags.artifactoryonline.com/axags/api/npm/virtual-bcn-node/zen-observable/-/zen-observable-0.7.1.tgz#f84075c0ee085594d3566e1d6454207f126411b3"
 
 Trace: 
-  Error: Command failed.
-  Exit signal: SIGKILL
-  Command: sh
-  Arguments: -c node src/index.js
-  Directory: /Users/xavierr/dev/workspaces/alternatives-orm/graphql-tutorial/hackernews-node
-  Output:
-  
-      at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
-      at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:226:113)
-      at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:30281:17)
+  Error: http://axags.artifactoryonline.com/axags/api/npm/virtual-bcn-node/prettier,: not_found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:65019:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:132430:22)
       at emitTwo (events.js:126:13)
-      at ChildProcess.emit (events.js:214:7)
-      at maybeClose (internal/child_process.js:925:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+      at Request.emit (events.js:214:7)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:133413:10)
+      at emitOne (events.js:116:13)
+      at Request.emit (events.js:211:7)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:133333:12)
+      at Object.onceWrapper (events.js:313:30)
+      at emitNone (events.js:111:20)

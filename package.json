@@ -1,7 +1,6 @@
 {
   "name": "graphql-node-tutorial",
-  "description":
-    "a tutorial of graphql based on https://www.howtographql.com/graphql-js",
+  "description": "a tutorial of graphql based on https://www.howtographql.com/graphql-js",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -10,5 +9,12 @@
   },
   "dependencies": {
     "graphql-yoga": "^1.8.5"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.11.0",
+    "prettier": "^1.12.0"
   }
 }
