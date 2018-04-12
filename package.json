@@ -1,0 +1,14 @@
+{
+  "name": "graphql-node-tutorial",
+  "description":
+    "a tutorial of graphql based on https://www.howtographql.com/graphql-js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "graphql-yoga": "^1.8.5"
+  }
+}
