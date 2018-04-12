@@ -3,9 +3,23 @@ const { readFileSync } = require('fs');
 
 const typeDefs = readFileSync(__dirname + '/../schema.gql').toString();
 
+const links = [
+  {
+    id: 'link-0',
+    url: 'www.howtographql.com',
+    description: 'Fullstack tutorial for GraphQL'
+  }
+];
+
 const resolvers = {
   Query: {
-    info: () => `This is the API with graphql`
+    info: () => `This is the API with graphql`,
+    feed: () => links
+  },
+  Link: {
+    id: root => root.id,
+    description: root => root.description,
+    url: root => root.url
   }
 };
 
