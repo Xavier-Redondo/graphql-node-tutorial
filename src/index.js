@@ -1,7 +1,4 @@
 const { GraphQLServer } = require('graphql-yoga');
-const { readFileSync } = require('fs');
-
-const typeDefs = readFileSync(__dirname + '/../schema.gql').toString();
 
 const links = [
   {
@@ -24,7 +21,7 @@ const resolvers = {
 };
 
 const server = new GraphQLServer({
-  typeDefs,
+  typeDefs: './schema.graphql',
   resolvers
 });
 
