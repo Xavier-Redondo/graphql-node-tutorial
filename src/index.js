@@ -8,16 +8,32 @@ const links = [
   }
 ];
 
+let idCount = links.length;
+
 const resolvers = {
   Query: {
     info: () => `This is the API with graphql`,
     feed: () => links
   },
-  Link: {
+  Mutation: {
+    // root -> result of the previous resolver execution level. They are nested according to the Query json structure.
+    // args -> arguments for the operation, the elements in the () in the schema definition
+    post: (root, args) => {
+      const link = {
+        id: `link-${idCount++}`,
+        description: args.description,
+        url: args.url
+      };
+      links.push(link);
+      return link;
+    }
+  }
+  // Not needed because graphQL infers them
+  /* , Link: {
     id: root => root.id,
     description: root => root.description,
     url: root => root.url
-  }
+  } */
 };
 
 const server = new GraphQLServer({
