@@ -4,7 +4,7 @@ const { Prisma } = require('prisma-binding');
 const resolvers = {
   Query: {
     info: () => `This is the API with graphql`,
-    feed: () => (root, args, context, info) => context.db.query.links({}, info)
+    feed: (root, args, context, info) => context.db.query.links({}, info)
   },
   Mutation: {
     // root -> result of the previous resolver execution level. They are nested according to the Query json structure.
@@ -33,10 +33,12 @@ const server = new GraphQLServer({
   resolvers,
   context: req => ({
     ...req,
-    typeDefs: 'src/generated/prisma.graphql',
-    endpoint: 'http://localhost:4466/hackernews-node/dev',
-    secret: 'mysecret123',
-    debug: true
+    db: new Prisma({
+      typeDefs: 'src/generated/prisma.graphql',
+      endpoint: 'http://localhost:4466/hackernews-node/dev',
+      secret: 'mysecret123',
+      debug: true
+    })
   })
 });
 
