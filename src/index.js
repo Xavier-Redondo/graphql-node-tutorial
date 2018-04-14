@@ -1,31 +1,14 @@
 const { GraphQLServer } = require('graphql-yoga');
 const { Prisma } = require('prisma-binding');
 
+const Query = require('./resolvers/Query');
+const Mutation = require('./resolvers/Mutation');
+const AuthPayload = require('./resolvers/AuthPayload');
+
 const resolvers = {
-  Query: {
-    info: () => `This is the API with graphql`,
-    feed: (root, args, context, info) => context.db.query.links({}, info)
-  },
-  Mutation: {
-    // root -> result of the previous resolver execution level. They are nested according to the Query json structure.
-    // args -> arguments for the operation, the elements in the () in the schema definition
-    post: (root, args, context, info) =>
-      context.db.mutation.createLink(
-        {
-          data: {
-            url: args.url,
-            description: args.description
-          }
-        },
-        info
-      )
-  }
-  // Not needed because graphQL infers them
-  /* , Link: {
-    id: root => root.id,
-    description: root => root.description,
-    url: root => root.url
-  } */
+  Query,
+  Mutation,
+  AuthPayload
 };
 
 const server = new GraphQLServer({

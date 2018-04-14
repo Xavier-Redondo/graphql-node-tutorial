@@ -12,9 +12,17 @@ yarn add prettier --dev
 yarn add eslint-config-airbnb --dev
 yarn add eslint-config-prettier --dev
 yarn add nodemon --dev
+yarn add dotenv --dev
 
 commands of prisma
 
 prisma deploy --> deploys
 prisma token --> generates a auth jwt token
 prisma info
+
+database info
+localhost:3306
+user: root
+pass: graphcool
+
+to launch the graphql explorer: graphql playground
