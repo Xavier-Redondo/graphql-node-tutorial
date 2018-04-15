@@ -1,6 +1,7 @@
-const info = () => `This is the API with graphql`;
+const info = async () => `This is the API with graphql`;
 
-const feed = (root, args, context, info) => context.db.query.links({}, info);
+const feed = async (root, args, context, info) =>
+  context.db.query.links({}, info);
 
 module.exports = {
   info,
