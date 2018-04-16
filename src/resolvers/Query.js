@@ -1,5 +1,3 @@
-const info = async () => `This is the API with graphql`;
-
 const feed = async (root, args, context, info) => {
   const where = args.filter
     ? {
@@ -28,13 +26,13 @@ const feed = async (root, args, context, info) => {
     countSelectionSet
   );
 
-  console.log('puta merda', queriedLinkes);
-
   return {
     count: linksConnection.aggregate.count,
     linkIds: queriedLinkes.map(link => link.id)
   };
 };
+
+const info = async () => `This is the API with graphql`;
 
 module.exports = {
   info,
